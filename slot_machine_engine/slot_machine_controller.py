@@ -1,7 +1,7 @@
-from logic.slot_machine_logic import slot_machine
+from .slot_machine_logic import slot_machine
 from acount_data_handling.data_handling import account_data
 account_data().load_accounts()
-def main_entry():
+def slot_machine_entry():
     machine = slot_machine()
     while True:
         user_bet = machine.place_bet()
