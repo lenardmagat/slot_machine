@@ -1,4 +1,4 @@
-from main_user.main_system import main_entry
+from controllers.user_main import main_entry
 
 def main():
     main_entry()
