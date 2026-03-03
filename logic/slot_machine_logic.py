@@ -1,5 +1,5 @@
 import random
-SLOT_MACHINE_REEL = ["🍒"] * 6 + ["💎"] + ["7️⃣"]*2
+SLOT_MACHINE_REEL = ["🍒"] * 7 + ["💎"] + ["7️⃣"]*2
 
 class slot_machine:
     def place_bet(self):
@@ -20,9 +20,11 @@ class slot_machine:
         if spin_results.count("🍒") == len(spin_results):
             user_bet = int(user_bet) * 3
             return user_bet
+        
         if spin_results.count("💎") == len(spin_results):
-            user_bet = int(user_bet) * 3
+            user_bet = int(user_bet) * 10
             return user_bet
+        
         if spin_results.count("7️⃣") == len(spin_results):
-            user_bet = int(user_bet) * 3
+            user_bet = int(user_bet) * 5
             return user_bet
