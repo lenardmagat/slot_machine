@@ -1,6 +1,5 @@
 def main():
-    print("tangninang buhay to oh")
-    print('aidhawdhadwa ')
+    pass
 
 
 if "__main__" == __name__:
