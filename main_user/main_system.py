@@ -1,4 +1,7 @@
+from logic.slot_machine_logic import slot_machine
+
 def main_entry():
-    print("test")
+    machine = slot_machine()
     while True:
-        break
+        user_bet = machine.place_bet()
+        print(f"You bet: {user_bet}")
