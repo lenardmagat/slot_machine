@@ -5,3 +5,5 @@ def main_entry():
     while True:
         user_bet = machine.place_bet()
         print(f"You bet: {user_bet}")
+        slot_machine_result = machine.slot_machine_spin()
+        print(slot_machine_result)
