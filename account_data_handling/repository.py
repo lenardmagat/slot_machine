@@ -14,6 +14,7 @@ class player_repository:
                 data = json.load(f)
         except FileNotFoundError:
             data = {}
+        data[player.username] = {}
         data[player.username]["credits"] = player.credits
         with open(self.FILE, "w") as f:
             json.dump(data, f, indent = 4)

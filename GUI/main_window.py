@@ -6,37 +6,25 @@ from model.player import player_logic
 from account_data_handling.repository import player_repository
 
 def start_main_window():
-    # Backend setup
     player_data = {
         "username" : "test",
-        "credits" : 100
+        "credits" : 1000
         }
     player = player_logic(player_data)
     repo = player_repository()
     service = game_service(player, repo)
-
-    # GUI setup
     root = tk.Tk()
     root.title("Slot Machine")
-
-    # Credits label
     credits_label = tk.Label(root, text=f"Credits: {player.credits}")
     credits_label.pack()
-
-    # Reel labels
     reel_labels = [tk.Label(root, text="❓") for _ in range(3)]
     for lbl in reel_labels:
         lbl.pack(side=tk.LEFT)
-
-    # Bet entry
     bet_entry = tk.Entry(root)
     bet_entry.pack()
-
-    # Message label
     message_label = tk.Label(root, text="")
     message_label.pack()
 
-    # Spin button
     def spin():
         try:
             bet = int(bet_entry.get())
@@ -48,9 +36,6 @@ def start_main_window():
             lbl.config(text=symbol)
         credits_label.config(text=f"Credits: {credits}")
         message_label.config(text=f"You won {payout}!")
-
     spin_button = tk.Button(root, text="Spin", command=spin)
     spin_button.pack()
-
-    # Start GUI
     root.mainloop()
