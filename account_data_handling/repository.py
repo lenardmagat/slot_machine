@@ -21,7 +21,7 @@ class player_repository:
     def verify_login(self, username, password):
         with open(self.FILE, "r") as f:
             data = json.load(f)
-        if username not in data | password != data[username][password]:
+        if username not in data or password != data[username][password]:
             return None
         return {
                 "username" : username,
