@@ -1,5 +1,5 @@
 import random
-SLOT_MACHINE_REEL = ["🍒"] * 5 + ["💎"] *2 + ["7️⃣"]*3
+SLOT_MACHINE_REEL = ["🍒"] * 5 + ["💎"] *2 + ["7"] *3
 
 class slot_machine:        
     def slot_machine_spin(self):

@@ -6,12 +6,13 @@ from model.player import player_logic
 from account_data_handling.repository import player_repository
 
 def start_main_window():
+    repo = player_repository()
+    players_data = repo.load()
     player_data = {
         "username" : "test",
-        "credits" : 1000
-        }
+        "credits" : players_data["test"]["credits"]
+    }
     player = player_logic(player_data)
-    repo = player_repository()
     service = game_service(player, repo)
     root = tk.Tk()
     root.title("Slot Machine")
