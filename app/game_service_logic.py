@@ -9,3 +9,5 @@ class game_service:
         self.player.deduct(bet)
         result = self.machine.slot_machine_spin()
         payout = self.machine.calculate_payout(result, bet)
+        self.player.add(payout)
+        self.repository.save(self.player)
