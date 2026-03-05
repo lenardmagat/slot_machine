@@ -4,8 +4,8 @@ from helper.utils import function_helper
 def create_user():
     while True:
         username = input("Enter your username: ")
-        verify = player_repository().verify_username(username)
-        if not verify:
+        verify_username_exist = player_repository().verify_username(username)
+        if not verify_username_exist:
             print("Username already exist")
             continue
         

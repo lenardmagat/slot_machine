@@ -2,5 +2,9 @@
     "test": {
         "password": "test",
         "credits": 35100
+    },
+    "lenard": {
+        "password": "magat",
+        "credits": 4000
     }
 }
