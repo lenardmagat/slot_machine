@@ -10,7 +10,7 @@ class player_logic:
             if amount == "Q" or amount == "q":
                 return None
             
-            if not amount.isdigit() or int(amount) > self.account_data["credits"] or  int(amount) < 0:
+            if not amount.isdigit() or int(amount) > self.account_data["credits"] or  int(amount) < 0 or int(amount) == 0:
                 print("Invalid amount!")
                 continue
 
@@ -33,4 +33,18 @@ class player_logic:
             player_repository().save(self.account_data)
             print("You successfully cash in %d. Total credits %d" %(int(amount), self.account_data["credits"]))
             return
+        
+    def deduct(self):
+        while True:
+            amount = input("Enter the amount you want to cash out [Q] to quit: ")
+            if amount == "Q" or amount == "q":
+                return None
             
+            if not amount.isdigit() or int(amount) > self.account_data["credits"] or  int(amount) < 0 or int(amount) == 0:
+                print("Invalid amount!")
+                continue
+
+            self.account_data["credits"] -=  int(amount)
+            print("You success fully cash out %s" %amount)
+            player_repository().save(self.account_data)
+            return

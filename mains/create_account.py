@@ -1,4 +1,5 @@
 from account_data_handling.repository import player_repository
+from helper.utils import function_helper
 def create_user():
     while True:
         username = input("Enter your username: ")
@@ -7,8 +8,8 @@ def create_user():
             print("Username already exist")
             continue
         
-        password = input("Enter your password: ")
-        re_enter_pass = input("Re-enter your password: ")
+        password = function_helper().input_password()
+        re_enter_pass = function_helper().input_password()
         if password == re_enter_pass:
             player_repository().create_account(username, password)
             print("suces creating an account")

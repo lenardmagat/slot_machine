@@ -5,13 +5,16 @@ SLOT_MACHINE_REEL = ["🍒"] * 5 + ["💎"] *2 + ["7"] *3
 
 class slot_machine:        
     def slot_machine_spin(self):
+        slots = ["|   |", "|   |", "|   |"]
         slot_machine_spin_result = []
+        print(" ".join(slots), end="\r")
         for i in range(3):
             time.sleep(2 * i)
             temp_result = random.choice(SLOT_MACHINE_REEL)
+            slots[i] = "| {} |".format(temp_result)
             slot_machine_spin_result.append(temp_result)
-            print(temp_result, end= "  ")
-        print("")
+            print(" ".join(slots), end="\r")
+        print()
         print(slot_machine_spin_result)
         return slot_machine_spin_result
 
