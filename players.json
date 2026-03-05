@@ -1,6 +1,6 @@
 {
     "test": {
-        "test": "test",
-        "370": 370
+        "password": "test",
+        "credits": 10410
     }
 }

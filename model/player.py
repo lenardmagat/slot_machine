@@ -8,12 +8,12 @@ class player_logic:
         while True:
             amount = input("Enter amount you want to bet [Q] to quit: ")
             if amount == "Q" or amount == "q":
-                break
+                return None
             if not amount.isdigit() or int(amount) > self.account_data["credits"] or  int(amount) < 0:
                 print("Invalid amount!")
                 continue
             self.account_data["credits"] -=  int(amount)
-            print("You success fully bet %s", amount)
+            print("You success fully bet %s" %amount)
             player_repository().save(self.account_data)
             return amount
 

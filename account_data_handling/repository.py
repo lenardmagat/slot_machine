@@ -16,7 +16,7 @@ class player_repository:
         except FileNotFoundError:
             data = {}
         data[player["username"]] = {}
-        data[player["username"]][player["password"]] = player["password"]
+        data[player["username"]]["password"] = player["password"]
         data[player["username"]]["credits"] = player["credits"]
         with open(self.FILE, "w") as file:
             json.dump(data, file, indent = 4)
