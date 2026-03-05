@@ -15,17 +15,19 @@ class player_repository:
                 data = json.load(file)
         except FileNotFoundError:
             data = {}
-        data[player.username] = {}
-        data[player.username]["credits"] = player.credits
+        data[player["username"]] = {}
+        data[player["username"]][player["password"]] = player["password"]
+        data[player["username"]]["credits"] = player["credits"]
         with open(self.FILE, "w") as file:
             json.dump(data, file, indent = 4)
 
     def verify_login(self, username, password):
         with open(self.FILE, "r") as file:
             data = json.load(file)
-        if username not in data or password != data[username][password]:
+        if username not in data or password != data[username]["password"]:
             return None
         return {
                 "username" : username,
+                "password" : data[username]["password"],
                 "credits" : data[username]["credits"]
                 }
