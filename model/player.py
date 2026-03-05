@@ -1,12 +1,12 @@
 from account_data_handling.repository import player_repository
+from display.main_display import main_window
 class player_logic:
     def __init__(self, account_data):
         self.account_data = account_data
 
-
     def bet(self):
         while True:
-            amount = input("Enter amount you want to bet [Q] to quit: ")
+            amount = main_window().bet(self.account_data["credits"])
             if amount == "Q" or amount == "q":
                 return None
             
@@ -21,7 +21,7 @@ class player_logic:
 
     def add(self):
         while True:
-            amount = input("Enter the amount you want to cash in [Q] to quit: ")
+            amount = main_window().cash_in(self.account_data["credits"])
             if amount == "Q" or amount == "q":
                 return None
 
@@ -36,7 +36,7 @@ class player_logic:
         
     def deduct(self):
         while True:
-            amount = input("Enter the amount you want to cash out [Q] to quit: ")
+            amount = main_window().cash_out(self.account_data["credits"])
             if amount == "Q" or amount == "q":
                 return None
             

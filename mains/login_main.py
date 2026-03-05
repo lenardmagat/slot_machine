@@ -3,6 +3,7 @@ from helper.utils import function_helper
 from account_data_handling.repository import player_repository
 from . import user_main
 screen = main_window()
+
 def main_logic():
     while True:
         username = input("Enter your username: ")

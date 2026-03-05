@@ -1,5 +1,6 @@
 from account_data_handling.repository import player_repository
 from helper.utils import function_helper
+
 def create_user():
     while True:
         username = input("Enter your username: ")

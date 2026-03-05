@@ -1,5 +1,6 @@
 from display.main_display import main_window
 from mains import login_main, create_account
+
 def main():
     while True:
         user_choice = main_window().login_screen()

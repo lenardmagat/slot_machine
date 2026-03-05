@@ -1,7 +1,8 @@
 from datetime import datetime
-def boxed_menu(credits, lines):
+
+def boxed_menu(description, lines):
     date_str = datetime.now().strftime("%d/%m/%Y")
-    header = f"{credits}     Date: {date_str}"
+    header = f"{description}     Date: {date_str}"
     content_width = max(len(header), *(len(line) for line in lines))
     box_width = content_width + 4 
     top = "┌" + "─" * box_width + "┐"
@@ -23,11 +24,35 @@ class main_window:
         boxed_menu("WELCOME TO SLOT MACHINE", lines)
         return input("Enter: ").upper().strip()
     
-    def main_screen(self, credits):
+    def main_screen(self, user_credits):
         lines = [
             "Enter [B] to bet",
             "Enter [I] to Cash in",
             "Enter [O] to cash out"
         ]
-        boxed_menu(f"credits : {credits}", lines)
+        boxed_menu(f"credits : {user_credits}", lines)
+        return input("Enter: ").upper().strip()
+
+    def bet(self, user_credits):
+        lines = [
+            "Enter the amount you want to bet",
+            "Enter [Q] to quit"
+        ]
+        boxed_menu(f"credits : {user_credits}", lines)
+        return input("Enter: ").upper().strip()
+    
+    def cash_in(self, user_credits):
+        lines = [
+            "Enter the amount you want to cash in",
+            "Enter [Q] to quit"
+        ]
+        boxed_menu(f"credits : {user_credits}", lines)
+        return input("Enter: ").upper().strip()
+    
+    def cash_out(self, user_credits):
+        lines = [
+            "Enter the amount you want to cash out",
+            "Enter [Q] to quit"
+        ]
+        boxed_menu(f"credits : {user_credits}", lines)
         return input("Enter: ").upper().strip()

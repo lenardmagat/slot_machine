@@ -1,4 +1,5 @@
 import msvcrt
+
 class function_helper:
     def input_password(self, prompt="Password: "):
         print(prompt, end="", flush=True)
