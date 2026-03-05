@@ -5,7 +5,6 @@ class function_helper:
         password = ""
         while True:
             char = msvcrt.getch()
-
             if char in (b'\r', b'\n'):     
                 print()
                 break
@@ -23,6 +22,7 @@ class function_helper:
                     decoded = char.decode()
                 except:
                     continue
+
                 password += decoded
                 print("*", end="", flush=True)
         return password

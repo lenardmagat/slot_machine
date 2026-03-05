@@ -20,26 +20,32 @@ class slot_machine:
             payout = int(user_bet) * 3
             print("YOU WIN x3!")
             return payout
+        
         elif spin_results.count("💎") == len(spin_results):
             payout = int(user_bet) * 100
             print("JACK POT!")
             return payout
+        
         elif spin_results.count("7") == len(spin_results):
             payout = int(user_bet) * 10
             print("YOU WIN x10!")
             return payout
+        
         elif spin_results.count("🍒") == 2:
             payout = int(user_bet)
             print("Bet return")
             return payout
+        
         elif spin_results.count("💎") == 2:
             payout = int(user_bet) * 5
             print("YOU WIN x5!")
             return payout
+        
         elif spin_results.count("7") == 2:
             payout = int(user_bet)
             print("Bet return")
             return payout
+        
         else:
             payout = 0
             return payout

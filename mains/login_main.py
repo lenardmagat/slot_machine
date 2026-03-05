@@ -10,5 +10,6 @@ def main_logic():
         user_data = player_repository().verify_login(username, password)
         if(user_data != None):
             user_main.user_main(user_data)
+            
         else:
             continue

@@ -1,5 +1,6 @@
 from display.main_display import main_window as screen
 from .user_main_controller import main_controller
+from model.player import player_logic
 def user_main(user_data):
     while True:
         user_choice = screen().main_screen()
@@ -7,7 +8,7 @@ def user_main(user_data):
             case "B":
                 main_controller(user_data).betting()
             case "I":
-                pass
+                player_logic(user_data).add()
             case "O":
                 pass
             case _:
