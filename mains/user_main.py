@@ -12,7 +12,10 @@ def user_main(user_data):
                 player_logic(user_data).add()
             case "O":
                 player_logic(user_data).deduct()
+            case "Q":
+                return
             case _:
+                print("INVALID INPUT!")
                 pass
 
     

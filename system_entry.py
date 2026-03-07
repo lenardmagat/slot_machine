@@ -9,6 +9,8 @@ def main():
                 login_main.main_logic()
             case "C":
                 create_account.create_user()
+            case "Q":
+                break
             case _:
                 pass
             

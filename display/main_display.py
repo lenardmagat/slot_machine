@@ -19,7 +19,8 @@ class main_window:
     def login_screen(self):
         lines = [
             "Enter [L] to login",
-            "Enter [C] to create account"
+            "Enter [C] to create account",
+            "Enter [Q] to quit"
         ]
         boxed_menu("WELCOME TO SLOT MACHINE", lines)
         return input("Enter: ").upper().strip()
@@ -28,7 +29,8 @@ class main_window:
         lines = [
             "Enter [B] to bet",
             "Enter [I] to Cash in",
-            "Enter [O] to cash out"
+            "Enter [O] to cash out",
+            "Enter [Q] to quit"
         ]
         boxed_menu(f"credits : {user_credits}", lines)
         return input("Enter: ").upper().strip()
